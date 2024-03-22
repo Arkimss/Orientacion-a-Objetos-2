@@ -1,0 +1,48 @@
+@startuml
+
+class User{
+  -screenName: String 
+  + <<create> User(screenName: String): User
+  - verificarLenghtString(texto: String): Boolean
+  + postear(texto: String): Tweet
+  + reTweetear(postOriginal: Tweet) : Retweet
+  + verificarScreenName(screenName: String): Boolean
+  + eliminarTweets()
+  + getTweets(): Post[*] 
+  + compararTweets(user:User)
+  
+  
+}
+interface Post{
+ + esIgual(tweet: Post): Boolean
+ + leerPost(): String
+}
+class Tweet{
+  + <<create>> Tweet(texto: String): Tweet 
+  - contenido: String
+  + esIgual(tweet: Post): Boolean
+ + leerPost(): String
+}
+class ReTweet{
++ esIgual(tweet: Post): Boolean
+ + leerPost(): String
+}
+
+class Twitter {
+  +<<create>> Twitter(): Twitter
+  + verificarScreenName(screenName: String): Boolean
+  + agregarUser(screenName: String): User
+  - existUser(user:User): Boolean
+  + eliminarUser(user: User)
+}
+
+
+
+
+Twitter--> "*" User
+User --> "*" Post
+Post <|.. ReTweet
+Post <|.. Tweet
+ReTweet --> Tweet
+
+@enduml
