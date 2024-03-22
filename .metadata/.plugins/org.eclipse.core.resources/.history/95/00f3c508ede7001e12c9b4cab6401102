@@ -1,0 +1,14 @@
+package ar.edu.unlp.info.oo2.Ejercicio_1;
+
+public class Tweet extends Post{
+	
+	private String contenido;
+	
+	public String getContenido() {
+		return this.contenido;
+	}
+	public Tweet(String texto) {
+		// TODO Auto-generated constructor stub
+		this.contenido= texto;
+	}
+}

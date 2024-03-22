@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package ar.edu.unlp.info.oo2.Ejercicio_1;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class TwitterTest {
+	
+	User james;
+	User guido;
+	Tweet deGuido;
+	Tweet deJames;
+	Retweet delTweetDeGuido;
+	Twitter x;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		x= new Twitter();
+		james = new User("James");
+		deGuido= new Tweet("Soy Un Crack");
+		deJames= new Tweet("Soy James");
+		guido = new User("Guido");
+		x.agregarUser(guido);
+		x.agregarUser(james);
+		
+	}
+    @Test
+    public void eliminarUserTest() {
+    	Tweet t= guido.postear("Soy Un Crack ");
+    	james.reTweetear(t);
+    	assertTrue(james.getTweets().contains(t));
+    	System.out.println(x.toString());
+    	x.eliminarUser(guido);
+    	assertFalse(james.getTweets().contains(t));
+        
+    }
+}

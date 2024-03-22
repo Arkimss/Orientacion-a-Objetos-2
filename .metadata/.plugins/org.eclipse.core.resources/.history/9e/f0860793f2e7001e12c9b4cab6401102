@@ -1,0 +1,69 @@
+package ar.edu.unlp.info.oo2.Ejercicio_1;
+import java.util.ArrayList;
+import java.util.List;
+public class User {
+
+	private String screenName;
+	private List<Post> tweets;
+	
+
+	public User(String screenName) {
+		this.screenName= screenName;
+		this.tweets = new ArrayList<Post>();
+	}
+	
+	public boolean verificarLengthString (String texto) {
+		return (texto.length() >= 1) && (texto.length() <= 280) ;
+	}
+	
+	public Tweet postear(String texto) {
+		Tweet nuevo= null;
+		if(this.verificarLengthString(texto)) {
+			 nuevo= new Tweet(texto);
+			this.tweets.add(nuevo);
+		}
+		return nuevo;
+	}
+	public Retweet reTweetear(Tweet original) {
+		//hago que retorne por el test
+		Retweet r=  new Retweet(original);
+		this.tweets.add(r);
+		return r;
+		
+   }
+
+	public boolean verificarScreenName(User user) {
+		return this.screenName.equals(user.screenName);
+	}
+
+	public void eliminarTweets() {
+		this.tweets.clear();
+	}
+	
+// Devuelvo una copia de la lista para que no pueda ser modificada
+	public List<Post> getTweets() {
+		List<Post> res= new ArrayList<Post>();
+		res.addAll(tweets);
+		return res;
+	}
+
+	public void compararTweets(User user) {
+		for(Post tweet : user.getTweets()){
+			Post elementoABorrar= this.tweets.stream().filter(t -> t.esIgual(tweet)).findFirst().orElse(null);
+			if(elementoABorrar != null) {
+			this.tweets.remove(elementoABorrar);
+			}
+		   }     
+		}
+
+	@Override
+	public String toString() {
+		 String aux= " ";
+		 for (Post tweet : tweets) {
+	           aux = aux + screenName + "tweets=" + tweet.toString() + "\n";
+	        }
+	        return aux;
+	    }
+			}
+		
+

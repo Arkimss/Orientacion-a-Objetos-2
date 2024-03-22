@@ -1,0 +1,17 @@
+package ar.edu.unlp.info.oo2.Ejercicio_1;
+
+import org.junit.jupiter.api.BeforeEach;
+
+public class UserTest {
+
+	User juan;
+	Tweet sinTexto;
+	Tweet ConMasDe280Caracteres;
+	
+	
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		juan= new User("")
+	}
+}

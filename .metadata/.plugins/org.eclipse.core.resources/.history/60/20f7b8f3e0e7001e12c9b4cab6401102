@@ -1,0 +1,13 @@
+package ar.edu.unlp.info.oo2.Ejercicio_1;
+
+public class Retweet {
+	private Tweet postOriginal;
+
+	
+	public Retweet(Tweet postOriginal) {
+		this.postOriginal = postOriginal;
+	}
+	
+	
+	
+}

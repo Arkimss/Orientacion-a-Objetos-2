@@ -1,0 +1,19 @@
+package ar.edu.unlp.info.oo2.Ejercicio_1;
+import java.util.ArrayList;
+import java.util.List;
+public class Twitter {
+	private List<User> users;
+
+	public Twitter() {
+		this.users = new ArrayList<User>();
+	} 
+	
+	
+	// Voy a solucionar el tema del retweet haciendo que cuando se cree un retweet, este sea una referencia al original, por lo que si se elimina el original, la referencia deja de existir.
+	
+	
+	
+	
+	
+	
+}

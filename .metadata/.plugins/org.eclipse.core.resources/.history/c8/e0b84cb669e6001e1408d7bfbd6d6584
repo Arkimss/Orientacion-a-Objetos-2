@@ -1,0 +1,28 @@
+package ar.edu.unlp.info.oo2.Ejercicio_1;
+import java.util.ArrayList;
+import java.util.List;
+public class Twitter {
+	private List<User> users;
+
+	public Twitter() {
+		this.users = new ArrayList<User>();
+	} 
+	
+	public boolean verificarScreenName(User user) {
+		//Si se encuentra un usuario con el mismo SN, se retorna false, si no true
+		User res=this.users.stream().filter(u -> u.verificarScreenName(user)).findAny().orElse(null);
+		return res != null ? false: true;
+	}
+	public void agregarUser(User newUSer) {
+		if(this.verificarScreenName(newUSer)) {
+			this.users.add(newUSer);
+		}
+	}
+	// Voy a solucionar el tema del retweet haciendo que cuando se cree un retweet, este sea una referencia al original, por lo que si se elimina el original, la referencia deja de existir.
+	
+	
+	
+	
+	
+	
+}

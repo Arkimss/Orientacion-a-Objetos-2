@@ -1,0 +1,12 @@
+package ar.edu.unlp.info.oo2.Ejercicio_1;
+
+public class Tweet implements Post{
+	
+
+	private String contenido;
+	
+	public Tweet(String texto) {
+		// TODO Auto-generated constructor stub
+		this.contenido= texto;
+	}
+}
