@@ -516,3 +516,5 @@
 2024-03-22 13:18:04,333 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Acost\Ejercicios Objetos 2\Ejercicio_1\src\test\resources
 2024-03-22 13:18:31,781 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-03-22 13:18:31,782 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Acost\Ejercicios Objetos 2\Ejercicio_1\src\main\resources
+2024-03-22 13:18:31,784 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-03-22 13:18:31,784 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Acost\Ejercicios Objetos 2\Ejercicio_1\src\test\resources
