@@ -1,0 +1,58 @@
+@startuml
+class JuegOO{
+ +jugar(jugada1: Eleccion, jugada2: Eleccion): String
+}
+interface Eleccion{
+ jugarContra(contrincante Eleccion): String  
+}
+class Piedra{
+ jugarContra(contrincante Eleccion): String
+ contraPiedra( ): String
+ contraPapel(): String
+ contraTijeras(): String
+ contraSpock(): String
+ contraLagarto(): String
+}
+class Tijera{
+ jugarContra(contrincante Eleccion): String
+ contraPiedra(): String
+ contraPapel(): String
+ contraTijeras(): String
+ contraSpock(): String
+ contraLagarto(): String
+}
+
+class Papel{
+ jugarContra(contrincante Eleccion): String
+ contraPiedra(): String
+ contraPapel(): String
+ contraTijeras(): String
+ contraSpock(): String
+ contraLagarto(): String
+}
+
+class Lagarto{
+ jugarContra(contrincante Eleccion): String
+ contraPiedra(): String
+ contraPapel(): String
+ contraTijeras(): String
+ contraSpock(): String
+ contraLagarto(): String
+}
+class Spock{
+ jugarContra(contrincante Eleccion): String
+ contraPiedra(): String
+ contraPapel(): String
+ contraTijeras(): String
+ contraSpock(): String
+ contraLagarto(): String
+}
+
+Eleccion <-- JuegOO
+Eleccion <|-- Piedra 
+Eleccion <|-- Papel
+Eleccion <|-- Tijera
+Eleccion <|-- Spock
+Eleccion <|-- Lagarto
+
+@enduml

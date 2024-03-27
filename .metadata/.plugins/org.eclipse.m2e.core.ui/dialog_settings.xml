@@ -26,12 +26,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="ejercicio2.paquete"/>
 			<item value="ejercice.eqw"/>
 		</list>
 		<list key="groupId">
+			<item value="ejercicio2"/>
 			<item value="2ejercice"/>
 		</list>
 		<list key="artifactId">
+			<item value="paquete"/>
 			<item value="eqw"/>
 		</list>
 		<list key="projectNameTemplate">
