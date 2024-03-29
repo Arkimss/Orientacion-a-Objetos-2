@@ -1,0 +1,34 @@
+@startuml
+abstract class Empleado{
+ #Sueldo(): Real
+ #calcularDescuento(): Real
+ # <<abstract>>calcularBasico():Real
+ # <<abstract>> calcularAdicional():Real
+}
+class Planta{
+ #calcularBasico():Real
+ #calcularAdicional():Real
+}
+class Temporario{
+ + <<create>>Temporario(estaCasado:boolean, cantidadDeHijos: Real,
+ cantidadDeHorasDeTrabajo: Real): Temporario
+ #calcularBasico():Real
+ #calcularAdicional():Real
+ -estaCasado(): Real
+ -calcularAdicionalPorHijos(): Real
+}
+
+class Pasante{
+ +<<create>>Pasante(cantidadDeExamenesRendidos: Real): Pasante
+ #calcularBasico():Real
+ #calcularAdicional():Real
+
+}
+
+
+Empleado <|-- Planta 
+Empleado <|-- Temporario
+Empleado <|-- Pasante
+
+
+@enduml

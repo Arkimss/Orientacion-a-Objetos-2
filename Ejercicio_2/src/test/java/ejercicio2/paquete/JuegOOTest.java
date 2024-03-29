@@ -58,9 +58,20 @@ public class JuegOOTest {
 
     @Test
     public void testSpock() {
-        assertEquals("Gana Spock", game.jugar(Spock, rock));
-        assertEquals("Gana Piedra", game.jugar(rock,scissors));
-
+        assertEquals("Gana Spock", game.jugar(spock, rock));
+        assertEquals("Empate", game.jugar(spock,spock));
+        assertEquals("Gana Papel", game.jugar(paper, spock));
+        assertEquals("Gana Spock", game.jugar(scissors, spock));
+        assertEquals("Gana Lagarto", game.jugar(spock, lagartija));
+    }     
+    @Test
+    public void testLagarto() {
+        assertEquals("Gana Lagarto", game.jugar(lagartija, spock));
+        assertEquals("Empate", game.jugar(lagartija,lagartija));
+        assertEquals("Gana Lagarto", game.jugar(lagartija, paper));
+        assertEquals("Gana Tijeras", game.jugar(lagartija, scissors));
+        assertEquals("Gana Piedra", game.jugar(lagartija, rock));
+    
         
     }
     

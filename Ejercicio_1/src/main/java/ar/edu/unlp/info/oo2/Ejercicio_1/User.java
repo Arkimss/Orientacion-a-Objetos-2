@@ -36,7 +36,7 @@ public class User {
 		return this.screenName.equals(screenName);
 	}
 
-	public void eliminarTweets() {
+	public void vaciarTweets() {
 		this.tweets.clear();
 	}
 	
@@ -46,11 +46,14 @@ public class User {
 		res.addAll(tweets);
 		return res;
 	}
-	//Compara los tweets entre el usuario que va a ser eliminado y otro usuario, verificando que no haya ningun retweet en el otro usuario. 
-	public void compararTweets(User user) {
+	
+	
+	/*//Compara los tweets entre el usuario que va a ser eliminado y otro usuario, verificando que no haya ningun retweet en el otro usuario. 
+	public void eliminarTweets(User user) {
 		for(Post tweet : user.getTweets()){ // Itero por cada tweet del usuario que voy a eliminar.
 			Post elementoABorrar= this.tweets.stream().filter(t -> t.esIgual(tweet)).findFirst().orElse(null);
 			if(elementoABorrar != null) {
+			
 			this.tweets.remove(elementoABorrar);
 			}
 		   }     
@@ -58,7 +61,7 @@ public class User {
 	//Idea: Hacer una lista de retweets.
 	
 
-	/*@Override
+	@Override
 	public String toString() {
 		 String aux= " ";
 		 for (Post tweet : tweets) {
