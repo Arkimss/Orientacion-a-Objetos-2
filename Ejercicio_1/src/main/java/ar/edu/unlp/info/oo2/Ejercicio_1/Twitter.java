@@ -1,6 +1,7 @@
 package ar.edu.unlp.info.oo2.Ejercicio_1;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 public class Twitter {
 	private List<User> users;
 
@@ -28,7 +29,7 @@ public class Twitter {
 	public void eliminarUser(User user) {
 		if(existeUser(user)) {
 			this.users.remove(user);
-			this.users.stream().forEach(u -> u.compararTweets(user));
+		//	this.users.stream().forEach(u -> u.compararTweets(user));
 			user.eliminarTweets();
 			
 		}
@@ -37,7 +38,7 @@ public class Twitter {
 		
   // recomendación del ayudante, Metodo recursivo, 
 	//Compara los tweets entre el usuario que va a ser eliminado y otro usuario, verificando que no haya ningun retweet en el otro usuario. 
-		public void eliminarTweets(User user) {
+		/*public void eliminarTweets(User user) {
 			for(Post tweet : user.getTweets()){ // Itero por cada tweet del usuario que voy a eliminar.
 				Post elementoABorrar= this.tweets.stream().filter(t -> t.esIgual(tweet)).findFirst().orElse(null);
 				if(elementoABorrar != null) {
@@ -45,15 +46,26 @@ public class Twitter {
 				this.tweets.remove(elementoABorrar);
 				}
 			   }     
-			}
-		public void eliminarTweet(Tweet tweet) {
+			}*/
+		public void eliminarTweets(Tweet tweet) {
 			User aux= this.users.stream().filter(u -> u.tieneTweet(tweet)).findFirst().orElse(null);
 			if(aux != null) {
 				aux.eliminarTweet(tweet);
-				obtenerTodosLosRetweets();
-				obtenerRetweetsQueCoincidan();
+				
+				List<Retweet> retweetsQueCoinciden= obtenerRetweetsQueCoincidan();
 				this.eliminarTweets(reTweet);
 			}
+		}
+
+		private List<Retweet> obtenerRetweetsQueCoincidan() {
+			List<Post>retweets = obtenerTodosLosRetweets();
+			
+			return retweets.stream().filter(r-> r.esIgual(r));
+		}
+
+		private List<Post> obtenerTodosLosRetweets() {
+			List<Post> res=  this.users.stream().flatMap(u -> u.obtenerRetweets()).toList();
+			return res;
 		}
 	
 	

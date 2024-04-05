@@ -19,6 +19,10 @@ public class Tweet implements Post{
 	public String toString() {
 		return "Tweet [contenido=" + contenido + "]";
 	}
+	@Override
+	public boolean esRetweet() {
+		return false;
+	}
 	
 	
 	

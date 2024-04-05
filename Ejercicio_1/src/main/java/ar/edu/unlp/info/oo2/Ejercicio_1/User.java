@@ -46,6 +46,21 @@ public class User {
 		res.addAll(tweets);
 		return res;
 	}
+
+	public void eliminarTweet(Tweet tweet) {
+		this.tweets.remove(tweet);	
+	}
+
+	public boolean tieneTweet(Tweet tweet) {
+		// TODO Auto-generated method stub
+		return this.tweets.contains(tweet);
+	}
+ 	
+	
+	public List<Post> obtenerRetweets() {
+	    List<Post> retweets = this.tweets.stream().filter(r -> r.esRetweet()).toList();            
+	    return retweets;
+	}
 	
 	
 	/*//Compara los tweets entre el usuario que va a ser eliminado y otro usuario, verificando que no haya ningun retweet en el otro usuario. 
@@ -68,7 +83,15 @@ public class User {
 	           aux = aux + screenName + "tweets=" + tweet.toString() + "\n";
 	        }
 	        return aux;
+	        
+	        public List<Retweet> obtenerRetweets() {
+		List<Retweet> retweets= this.tweets.stream().filter(p -> p.esRetweet()).map(p -> (Retweet) p).toList();
+		return retweets;
+	}
 	    }*/
+	
+	
+	
 			}
 		
 

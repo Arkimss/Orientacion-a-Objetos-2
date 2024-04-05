@@ -26,6 +26,14 @@ public class Retweet implements Post {
 	public String toString() {
 		return "Retweet [postOriginal=" + postOriginal.leerPost() + "]";
 	}
+
+
+
+	@Override
+	public boolean esRetweet() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 	
 	
 	

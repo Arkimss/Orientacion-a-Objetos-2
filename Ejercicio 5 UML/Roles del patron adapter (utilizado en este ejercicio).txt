@@ -1,0 +1,10 @@
+Patron utilizado: Adapter
+Considere que se debia utilizar este patron ya que el ejercicio requiere adaptar una nueva interfaz a nuestra solución anterior, como su metodo tiene distinto nombre y no podemos cambiar la implementación, podemos usar un adapter que llame al metodo de la clase a adaptar.
+
+
+Roles:
+Client: MediaPlayer, ya que utiliza los objetos que responden a la interfaz media.
+Target: Media
+Adaptee: VideoStream, es la clase a ser adaptada.
+Adapter: VideoStreamAdapter es la clase que adapta la clase VideoStream
+

@@ -1,7 +1,0 @@
-package ar.edu.unlp.info.oo2.Ejercicio_1;
-
-public abstract class Post {
-
-	protected abstract boolean esIgual(Post tweet);
-	
-}

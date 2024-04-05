@@ -5,5 +5,7 @@ public interface Post {
 	boolean esIgual(Post tweet);
 	
 	String leerPost();
+
+	boolean esRetweet();
 	
 }
