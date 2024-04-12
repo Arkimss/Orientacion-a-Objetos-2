@@ -1,0 +1,70 @@
+@startuml
+class Client{
+  +<<create>>Client(): Client
+  +agregarTopografia(t: Topografia): void
+  +compararDosTopografias(t: Topografia, t2: Topografia): boolean
+}
+Interface Topografia{
+ + <<abstract>>calcularProporcionDeAgua(): real
+ + <<abstract>>calcularProporcionDeTierra(): real
+ + <<abstract>>sonIguales(topografia : Topografia): boolean
+ + <<abstract>>igualAgua():boolean
+ + <<abstract>>igualTierra():boolean
+ + <<abstract>>igualMixta():boolean
++ <<abstract>>igualPantano():boolean
+
+}
+
+class Agua{
+ +<<create>> Agua(): Agua
+ +calcularProporcionDeAgua(): real
+ +calcularProporcionDeTierra(): real
+ +sonIguales(topografia : Topografia): boolean
+ +igualAgua():boolean
+ +igualTierra():boolean
+ +igualMixta():boolean
+ +igualPantano():boolean
+
+}
+
+class Tierra{
+ +<<create>> Tierra(): Tierra
+ +calcularProporcionDeAgua(): real
+ +calcularProporcionDeTierra(): real
+ +sonIguales(topografia : Topografia): boolean
+ +igualAgua():boolean
+ +igualTierra():boolean
+ +igualMixta():boolean
++igualPantano():boolean
+
+}
+class Pantano{
++<<create>> Pantano(): Pantano
+ +calcularProporcionDeAgua(): real
+ +calcularProporcionDeTierra(): real
+ +sonIguales(topografia : Topografia): boolean
+ +igualAgua():boolean
+ +igualTierra():boolean
+ +igualMixta():boolean
+ +igualPantano():boolean
+
+}
+class Mixta{
+ +<<create>> Mixta(topografias : Topografia[*]): Tierra
+ +calcularProporcionDeAgua(): real
+ +calcularProporcionDeTierra(): real
+ +sonIguales(topografia : Topografia): boolean
+ +igualAgua():boolean
+ +igualTierra():boolean
+ +igualMixta():boolean
+ +igualPantano():boolean
+
+}
+
+Client --> Topografia 
+Topografia<|-- Agua
+Topografia<|-- Tierra 
+Topografia<|-- Mixta
+Topografia<|-- Pantano
+Topografia --*  "children" Mixta
+@enduml

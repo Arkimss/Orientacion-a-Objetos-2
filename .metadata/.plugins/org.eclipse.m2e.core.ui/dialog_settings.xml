@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Acost\Ejercicios Objetos 2\Ejercicio6\src\test\java\paquete\Ejercicio6"/>
 			<item value="C:\Users\Acost\Ejercicios Objetos 2\Ejercicio_1\src\main\java\ar\edu\unlp\info\oo2\Ejercicio_1\User.java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,25 +27,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="paquete.Ejercicio_4"/>
-			<item value="paquete.Ejercicio3"/>
-			<item value="paquete.Ejercicio4"/>
-			<item value="ejercicio3.paquete"/>
-			<item value="ejercicio2.paquete"/>
-			<item value="ejercice.eqw"/>
+			<item value="Paquete.Ejercicio_6B"/>
 		</list>
 		<list key="groupId">
-			<item value="paquete"/>
-			<item value="ejercicio3"/>
-			<item value="ejercicio2"/>
-			<item value="2ejercice"/>
+			<item value="Paquete"/>
 		</list>
 		<list key="artifactId">
-			<item value="Ejercicio_4"/>
-			<item value="Ejercicio3"/>
-			<item value="Ejercicio4"/>
-			<item value="paquete"/>
-			<item value="eqw"/>
+			<item value="Ejercicio_6B"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -55,7 +44,6 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
-			<item value="0.0.1"/>
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
