@@ -1,0 +1,5 @@
+
+Identifique que se tiene que utilizar el patron composite porque estamos creando la clase "File System" que se compone de directorios y archivos, y los directorios, a su vez, pueden estar compuestos por otros directorios, lo que nos muestra que los directorios necesitan de ser representados mediante una jerarquia parte-todo.
+
+
+En esta solución, la clase FileSystem, tendrá el rol del cliente, ya que va a interactuar con los objetos, La clase contenido, va a representar "Component", ya que es una interfaz que van a implementar los objetos de la composición. La clase "Directorio" cumple el rol de Composite, porque es el objeto que se compone de otros objetos que implementan la interfaz "Contenido" y "Archivo" seria un leaf, es decir, una hoja de la interfaz "contenido".
