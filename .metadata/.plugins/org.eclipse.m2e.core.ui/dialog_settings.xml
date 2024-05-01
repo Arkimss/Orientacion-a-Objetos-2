@@ -27,12 +27,18 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="Paquete.Ejercicio_12"/>
+			<item value="Paquete.Ejercicio_8"/>
+			<item value="Paquete.Ejercicio7"/>
 			<item value="Paquete.Ejercicio_6B"/>
 		</list>
 		<list key="groupId">
 			<item value="Paquete"/>
 		</list>
 		<list key="artifactId">
+			<item value="Ejercicio_12"/>
+			<item value="Ejercicio_8"/>
+			<item value="Ejercicio7"/>
 			<item value="Ejercicio_6B"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -44,6 +50,8 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
+			<item value="1.0.0"/>
+			<item value="0.0.1"/>
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>

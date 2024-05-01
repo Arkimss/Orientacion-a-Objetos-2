@@ -1,0 +1,4 @@
+Utilicé el patron state porque una excursión puede tener varios estados que cambian según la cantidad de inscriptos 
+
+
+El rol context es representado por la clase Excursion y el rol State es representado por la clase EstadoInscripcion.

@@ -1,0 +1,28 @@
+@startuml
+class FileSystem{
+  +tamanioTotalOcupado(): integer
+  +archivoMasGrande(): Archivo 
+  +archivoMasNuevo(): Archivo
+  +buscar(): Contenido
+  +buscarTodos(): Contenido[*]
+  +listadoDeContenido(): String
+
+}
+ abstract class Contenido{
+  -nombre: String
+}
+
+class Archivo{
+  -fechaCreacion: Date
+  -size: integer
+}
+
+class Directorio{
+}
+
+FileSystem --> Contenido 
+Contenido<|-- Archivo
+Contenido<|-- Directorio 
+
+Directorio *-- "*" Contenido
+@enduml
