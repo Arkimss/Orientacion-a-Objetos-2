@@ -1,0 +1,1 @@
+Adopto el patrón Strategy ya que existe la necesidad de encriptar un mensaje de diversas maneras, permitiendo así elegir la estrategia deseada para llevar a cabo el proceso de encriptación.

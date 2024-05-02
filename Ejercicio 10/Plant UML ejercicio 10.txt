@@ -1,0 +1,41 @@
+@startuml
+!theme toy
+class Mensajero{
+
+ +enviar(mensaje: String)
+}
+
+class Conexion{
+ +enviar(mensaje: String)
+}
+
+class ConexionSegura{
+ +enviar(mensaje: String)
+}
+note top: Context
+
+interface Encriptador{
+ +encriptar(mensaje: String): String
+}
+note top: Strategy
+class RSA{
++encriptar(mensaje: String): String
+}
+note top: concrete Strategy
+class Blowfish {
++encriptar(mensaje: String): String
+
+}
+note top: concrete Strategy
+class RC4{
++encriptar(mensaje: String): String
+}
+note top: concrete Strategy
+
+Mensajero -->  Conexion : conexion
+ConexionSegura --|> Conexion
+ConexionSegura -->  Encriptador : encriptador
+RC4 --|> Encriptador
+RSA --|> Encriptador
+Blowfish--|> Encriptador
+@enduml
