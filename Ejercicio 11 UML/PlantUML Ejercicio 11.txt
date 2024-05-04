@@ -1,0 +1,47 @@
+@startuml
+class Proyecto{
+ +<<create>> Proyecto(nombre: String, fechaInicio: Date, fechaFin: Date, objetivo:String, cantIntegrantes: integer, MontoPorIntegrante: real)
+ +nombre: String
+ +fechaInicio: Date
+ +fechaFin: Date
+ +objetivo: String
+ +margenDeGanancia: real
+ +CantidadIntegrantes: integer
+ +MontoPorIntegrante: real
+
+ +aprobarEtapa()
+ +costoDelProyecto(): Real
+ +precioDelProyecto(): Real
+ +modificarMargenDeGanancia(nuevoMargen: real)
+ +cancelarProyecto()
+ +cambiarEtapa(etapa: Etapa)
+}
+
+interface Etapa{
+ +aprobarEtapa(proyect: Proyecto)
++verificarMargen(nuevoMargen: real): Boolean
++modificarMargenDeGanancia(nuevoMargen: real, p: Proyecto)
+}
+
+class EnConstruccion{
++aprobarEtapa(proyect: Proyecto)
++verificarMargen(nuevoMargen: real): Boolean
++modificarMargenDeGanancia(nuevoMargen: real, p: Proyecto)
+}
+
+class EnEvaluacion{
++verificarMargen(nuevoMargen: real): Boolean
++aprobarEtapa(proyect: Proyecto)
++modificarMargenDeGanancia(nuevoMargen: real, p: Proyecto)
+}
+
+class Confirmada{
++aprobarEtapa(proyect: Proyecto)
++verificarMargen(nuevoMargen: real): Boolean
++modificarMargenDeGanancia(nuevoMargen: real, p: Proyecto)
+}
+Proyecto ---> Etapa
+Confirmada ---|> Etapa
+EnConstruccion---|> Etapa
+EnEvaluacion---|> Etapa
+@enduml

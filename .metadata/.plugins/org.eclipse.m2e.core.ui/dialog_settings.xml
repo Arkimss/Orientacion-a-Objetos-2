@@ -27,6 +27,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="Paquete.Ejercicio_11"/>
 			<item value="Paquete.Ejercicio_09"/>
 			<item value="Paquete.Ejercicio_12"/>
 			<item value="Paquete.Ejercicio_8"/>
@@ -37,6 +38,7 @@
 			<item value="Paquete"/>
 		</list>
 		<list key="artifactId">
+			<item value="Ejercicio_11"/>
 			<item value="Ejercicio_09"/>
 			<item value="Ejercicio_12"/>
 			<item value="Ejercicio_8"/>
@@ -52,8 +54,8 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
-			<item value="1.0.0"/>
 			<item value="0.0.1"/>
+			<item value="1.0.0"/>
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
