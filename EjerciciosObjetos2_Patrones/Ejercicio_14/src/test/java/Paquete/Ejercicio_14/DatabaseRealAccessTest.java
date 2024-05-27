@@ -24,5 +24,5 @@ package Paquete.Ejercicio_14;
 	        assertEquals(3, this.database.insertNewRow(Arrays.asList("Patoruzú", "La flor")));
 	        assertEquals(Arrays.asList("Patoruzú", "La flor"), this.database.getSearchResults("select * from comics where id=3"));
 	    }
-	}
 }
+
