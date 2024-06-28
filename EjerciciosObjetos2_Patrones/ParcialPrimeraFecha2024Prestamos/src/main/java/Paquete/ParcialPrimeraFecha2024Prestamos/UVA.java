@@ -7,12 +7,7 @@ public class UVA extends Prestamo{
 		montoPagado= 0;
 	}
 
-	@Override
-	protected void registrarPago() {
-		this.decrementarUnaCuota();
-		this.montoPagado += this.determinarValorDeUnaCuota();
-	}
-
+	
 	@Override
 	protected double getInteres() {
 		// TODO Auto-generated method stub
@@ -27,6 +22,13 @@ public class UVA extends Prestamo{
 	@Override
 	public double calcularValorDeSello() {
 		return 0;
+	}
+
+
+	@Override
+	protected void actualizarMontoPagado() {
+		// TODO Auto-generated method stub
+		this.montoPagado += this.determinarValorDeUnaCuota();
 	}
 
 }

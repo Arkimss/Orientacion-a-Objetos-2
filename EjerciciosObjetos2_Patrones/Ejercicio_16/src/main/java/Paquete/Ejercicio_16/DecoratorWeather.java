@@ -40,7 +40,7 @@ public abstract class DecoratorWeather implements WeatherData {
 	@Override
 	public String displayData() {
 		// TODO Auto-generated method stub
-		return "";
+		return this.datos.displayData();
 	}
 
 }

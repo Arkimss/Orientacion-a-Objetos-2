@@ -7,15 +7,19 @@ import org.junit.jupiter.api.Test;
 
 public class BancoTest {
 	Banco banco;
+	Simple prestamoSimple;
+	Cliente cliente;
 	@BeforeEach
 	void setUp() throws Exception {
-		banco = new Banco(1);
+		banco = new Banco(0.05);
+		 cliente = new Cliente("Ale", 5000);
+    	
 	}
     @Test
     public void testPrestamoSimple() {
-    	Simple prestamoSimple = new Simple(100,10,0.05);
-    	banco.solicitarPrestamo(prestamoSimple,"Ale", 5000);
-  
+    	 // mal instanciado, seria : Simple prestamoSimple=  banco.solicitarPrestamoSimple(...) 
+    	prestamoSimple = banco.solicitarPrestamoSimple(100,10,cliente);
+    	System.out.println(prestamoSimple.calcularMontoPagado());
         assertEquals(0, prestamoSimple.calcularMontoPagado());
         prestamoSimple.pagarCuota();
         assertEquals(10.5, prestamoSimple.calcularMontoPagado());

@@ -5,7 +5,8 @@ public class Finalizado implements EstadoPrestamo {
 	@Override
 	public void pagarCuota(Prestamo prestamo) {
 		// TODO Auto-generated method stub
-		throw new Error("error");
+		System.out.println("FIN");
+		throw new Error("error");  // duplicado. rremplazar el msj o subir arriba
 	}
 
 	@Override

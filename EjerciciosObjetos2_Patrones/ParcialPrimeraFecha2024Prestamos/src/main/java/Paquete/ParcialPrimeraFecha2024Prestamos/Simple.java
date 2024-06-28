@@ -2,17 +2,13 @@ package Paquete.ParcialPrimeraFecha2024Prestamos;
 
 public class Simple extends Prestamo{
 	private double tasaDeInteres;
+	
 	public Simple(double montoSolicitado, int cantidadDeCuotas, double tasaDeInteres) {
 		super(montoSolicitado, cantidadDeCuotas);
 		this.tasaDeInteres = tasaDeInteres;
 		
 	}
 
-	@Override
-	protected void registrarPago() {
-		// TODO Auto-generated method stub
-		this.decrementarUnaCuota();
-	}
 
 	@Override
 	protected double getInteres() {
@@ -31,6 +27,12 @@ public class Simple extends Prestamo{
 	public double calcularValorDeSello() {
 		// TODO Auto-generated method stub
 		return 5000;
+	}
+
+	@Override
+	protected void actualizarMontoPagado() {
+		// TODO Auto-generated method stub
+		//No hace nada
 	}
 
 }

@@ -5,6 +5,7 @@ public class Rechazado implements EstadoPrestamo {
 	@Override
 	public void pagarCuota(Prestamo prestamo) {
 		// TODO Auto-generated method stub
+		System.out.println("RECH");
 		throw new Error("error");
 	}
 

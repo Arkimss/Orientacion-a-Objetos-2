@@ -39,8 +39,8 @@ public class WeatherDataTest {
 	    
 	    @Test
 	    public void testTemperaturaMaximaF() {
-	    	System.out.println(temperaturaMaximaF.displayData());
-	        assertEquals("5.0°C 41.0°F", temperaturaMaximaF.displayData());
+	    	
+	        assertEquals("5.0°CMáximo: 41.0°F", temperaturaMaximaF.displayData());
 	        
 	    }
 	    
@@ -59,7 +59,7 @@ public class WeatherDataTest {
 	    	temperaturaPromedioC  = new DecoratorPromedioCelsius(radiacionSolar);
 	    	temperaturaMinimaF = new DecoratorMinimoFahrenheit(temperaturaPromedioC);
 	    	temperaturaMaximaFEj5 = new DecoratorMaximoFahrenheit(temperaturaMinimaF);
-	
+	    	System.out.println(temperaturaMaximaFEj5.displayData());
 	        assertEquals("Temperatura C: 30Presión atmosferica: 1008.0;Radiación solar: 200.0; Promedio: 30°F;Mínimo: 27°FMáximo: 32°F", temperaturaMaximaFEj5.displayData());
 	        
 	    }

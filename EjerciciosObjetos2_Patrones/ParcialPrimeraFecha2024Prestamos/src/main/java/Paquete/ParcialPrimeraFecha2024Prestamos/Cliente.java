@@ -8,6 +8,11 @@ public Cliente(String nombre, double salarioMensual) {
 	this.nombre = nombre;
 	this.salarioMensual = salarioMensual;
 }
+public double calcular30PorcientoDelSueldo() {
+	// TODO Auto-generated method stub
+	return this.salarioMensual * 0.3;
+}
  
+// este tiene que hacer el calculo del 30% del sueldo
  
 }

@@ -4,7 +4,7 @@ public class Aceptado implements EstadoPrestamo {
 
 	@Override
 	public void pagarCuota(Prestamo prestamo) {
-		if(prestamo.cantidadDeCuotasRestantes == 1) {
+		if(prestamo.getCantidadDeCuotasRestantes() == 1) { // acceso a variable de instancia, {ARREGLADO}
 			prestamo.setState(new Finalizado());
 		}
 		prestamo.registrarPago();
