@@ -2,7 +2,7 @@ package Paquete.Ejercicio_15;
 
 import java.time.LocalDate;
 
-public  class FileDecorator implements FileOO2{
+public abstract class FileDecorator implements FileOO2{
 	protected FileOO2 file;
 
 	

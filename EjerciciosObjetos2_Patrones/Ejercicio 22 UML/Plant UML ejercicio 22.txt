@@ -1,0 +1,58 @@
+@startuml
+
+class Director {
+  +cambiarBuilder(builder: BuilderSanguche)
+  +buildSanguche(): Sanguche
+}
+
+abstract BuilderSanguche{
+ + <<abstract>> agregarPan()
+ + <<abstract>> agregarAderezo()
+ + <<abstract>> agregarPrincipal()
+ + <<abstract>> agregarAdicional()
+}
+
+class BuilderClasico extends BuilderSanguche{
+ +agregarPan()
+ +agregarAderezo()
+ +agregarPrincipal()
+ +agregarAdicional()
+
+}
+
+class BuilderVegetariano extends BuilderSanguche{
+ +agregarPan()
+ +agregarAderezo()
+ +agregarPrincipal()
+ +agregarAdicional()
+}
+
+class BuilderVegano extends BuilderSanguche{
+ +agregarPan()
+ +agregarAderezo()
+ +agregarPrincipal()
+ +agregarAdicional()
+
+}
+
+class BuilderSinTacc extends BuilderSanguche{
+ +agregarPan()
+ +agregarAderezo()
+ +agregarPrincipal()
+ +agregarAdicional()
+ 
+}
+
+
+class Sanguche {
+ 
+}
+
+class Parte{
+ -precio
+}
+
+Sanguche --> Parte : "*" 
+BuilderSanguche ..> Sanguche
+Director *-- BuilderSanguche: "1"
+@enduml
