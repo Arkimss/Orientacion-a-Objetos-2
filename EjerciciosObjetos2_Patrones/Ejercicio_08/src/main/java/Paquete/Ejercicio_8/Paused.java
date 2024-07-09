@@ -3,15 +3,14 @@ package Paquete.Ejercicio_8;
 public class Paused extends Estado {
 
 	@Override
-	protected void togglePause() {
-		// TODO Auto-generated method stub
-		
+	public void togglePause(ToDoItem item) {
+		item.setEstado(new InProgress());
 	}
 
+
 	@Override
-	protected void finish() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void finish(ToDoItem item) {
+		item.setEstado(new Finished());
+		}
 
 }

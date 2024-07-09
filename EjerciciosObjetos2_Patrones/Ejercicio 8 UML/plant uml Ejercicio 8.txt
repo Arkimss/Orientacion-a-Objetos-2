@@ -1,0 +1,42 @@
+@startuml
+
+class ToDoItem {
+  -nombre: String
+  -tiempoDeInicio: Date
+  -tiempoDeFin: Date
+  + start()
+  + finish()
+  + togglePause()
+  + workedTime(): Duration
+  + setEstado(estado: EstadoTarea)
+}
+
+abstract class EstadoTarea{
+ + start(item: ToDoItem )
+ + finish(item:ToDoItem )
+ + togglePause(item: ToDoItem )
+ 
+
+}
+
+class Pending extends EstadoTarea{
+   + start(item: ToDoItem )
+}
+
+class Paused extends EstadoTarea{
+ + finish(item:ToDoItem )
+ + togglePause(item: ToDoItem )
+}
+
+class Finished extends EstadoTarea{
+}
+
+class InProgress extends EstadoTarea{
+ + finish(item:ToDoItem )
+ + togglePause(item: ToDoItem )
+}
+
+ToDoItem --> EstadoTarea: "1"
+
+
+@enduml

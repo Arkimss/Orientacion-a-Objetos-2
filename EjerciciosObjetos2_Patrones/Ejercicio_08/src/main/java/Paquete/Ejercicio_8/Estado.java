@@ -1,16 +1,17 @@
 package Paquete.Ejercicio_8;
 
 public abstract class Estado {
-	protected ToDoItem tarea; 
 	
 
 	public void start(ToDoItem item) {
 	System.out.println("El estado no se encuentra en Pending");
 	}
 
-	protected abstract void togglePause();
+	public  void togglePause(ToDoItem item) {
+		throw new RuntimeException("El objeto ToDoItem no se encuentra en pause o in-progress");
+	}
 
-	protected abstract void finish();
-	
-	
+	public void finish(ToDoItem item) {
+		System.out.println("El estado no se encuentra en Pending o en pause");
+		}
 }

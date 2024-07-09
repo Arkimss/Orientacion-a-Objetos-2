@@ -3,16 +3,17 @@ package Paquete.Ejercicio_8;
 public class InProgress extends Estado {
 
 	@Override
-	protected void togglePause() {
-		// TODO Auto-generated method stub
-		
+	public void togglePause(ToDoItem item) {
+		item.setEstado(new Paused());
 	}
 
+
 	@Override
-	protected void finish() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void finish(ToDoItem item) {
+		item.setEstado(new Finished());
+		}
+
+	
 	
 
 	
