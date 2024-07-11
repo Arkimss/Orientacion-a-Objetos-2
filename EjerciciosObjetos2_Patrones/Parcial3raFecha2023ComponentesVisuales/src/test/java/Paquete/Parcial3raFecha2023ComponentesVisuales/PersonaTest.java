@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Paquete.Ejercicio21;
+package Paquete.Parcial3raFecha2023ComponentesVisuales;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

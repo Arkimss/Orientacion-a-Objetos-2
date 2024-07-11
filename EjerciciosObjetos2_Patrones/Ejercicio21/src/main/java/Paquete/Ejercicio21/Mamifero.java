@@ -9,6 +9,16 @@ public class Mamifero extends AbstractMamifero{
   private Mamifero padre;
   private Mamifero madre;
 
+  	
+  
+	public Mamifero(String identificador, String especie, LocalDate fechaNacimiento, Mamifero padre, Mamifero madre) {
+	this.identificador = identificador;
+	this.especie = especie;
+	this.fechaNacimiento = fechaNacimiento;
+	this.padre = padre;
+	this.madre = madre;
+}
+
 	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
@@ -50,36 +60,36 @@ public class Mamifero extends AbstractMamifero{
 	}
 
 	public Mamifero getAbueloMaterno() {
-		return this.getMadre() == null ? null : this.getMadre().getPadre();
+		return  this.getMadre().getPadre();
 	}
 
 	public Mamifero getAbueloPaterno() {
-		return this.getPadre() == null ? null : this.getPadre().getPadre();
+		return this.getPadre().getPadre();
 	}
 
 	public Mamifero getAbuelaMaterna() {
-		return this.getMadre() == null ? null : this.getMadre().getMadre();
+		return this.getMadre().getMadre();
 	}
 
 	public Mamifero getAbuelaPaterna() {
-		return this.getPadre() == null ? null : this.getPadre().getMadre();
+		return this.getPadre().getMadre();
 	}
 
-	private boolean tienePadre() {
+	/*private boolean tienePadre() {
 		return this.getPadre() != null;
-	}
+	}*/
 
-	private boolean tieneMadre() {
+	/*private boolean tieneMadre() {
 		return this.getMadre() != null;
-	}
+	}*/
 
 	private Mamifero buscar(Mamifero mamifero) {
 		Mamifero Res = null;
 		if (this == mamifero)
 			Res = this;
-		if (this.tieneMadre() && Res == null)
+		if ( Res == null)
 			Res = this.getMadre().buscar(mamifero);
-		if (this.tienePadre() && Res == null)
+		if ( Res == null)
 			Res = this.getPadre().buscar(mamifero);
 		return Res;
 
@@ -99,9 +109,9 @@ public class Mamifero extends AbstractMamifero{
 		if (this.getIdentificador().equals(mamifero)) {
 			esAncestro = true;
 		} else {
-			if (this.tieneMadre())
+			
 				esAncestro = this.getMadre().tieneComoAncestroA2(mamifero);
-			if (this.tienePadre() && esAncestro != true)
+			if (esAncestro != true)
 				esAncestro = this.getPadre().tieneComoAncestroA2(mamifero);
 		}
 		return esAncestro;
